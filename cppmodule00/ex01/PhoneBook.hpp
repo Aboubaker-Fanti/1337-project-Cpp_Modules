@@ -6,7 +6,7 @@
 /*   By: afanti <afanti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:59:09 by afanti            #+#    #+#             */
-/*   Updated: 2023/08/29 19:26:44 by afanti           ###   ########.fr       */
+/*   Updated: 2023/09/07 13:05:47 by afanti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <iostream>
 # include <string> 
 # include "Contact.hpp"
-#include <cstring>
 #include <iomanip>
+#include <stdlib.h>
+
 
 class PhoneBook
 {

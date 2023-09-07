@@ -7,7 +7,7 @@ int main(int ac, char **av)
         for (int t = 1; t < ac; t++){
         
         std::string str = av[t];
-        for(int i = 0; i < str.length(); i++){
+        for(size_t i = 0; i < str.length(); i++){
             str[i] = toupper(str[i]);
         }
         std::cout << str;

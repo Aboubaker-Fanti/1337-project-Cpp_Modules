@@ -6,7 +6,7 @@
 /*   By: afanti <afanti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:05:25 by afanti            #+#    #+#             */
-/*   Updated: 2023/08/30 14:44:02 by afanti           ###   ########.fr       */
+/*   Updated: 2023/09/07 14:25:58 by afanti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void    PhoneBook :: add(int i)
     std::getline(std::cin, str);
     if (str[0] == '\0')
         y++;
-    for (int o = 0; o < str.length(); o++) {
+    for (size_t o = 0; o < str.length(); o++) {
         if(!isdigit(str[o]))
         {
-          std::cout << "error in your phone number";
+          std::cout << "error in your phone number" << std::endl;
           y++;
           break ;
         }
@@ -66,7 +66,6 @@ void    PhoneBook::search(int d)
     std::string name;
 
     i = 0;
-    std::cout << " KJFGKJHDKJFGHKJD=>" <<  d << std::endl;
     std::cout << "  index   |first name| last name| nickname |" << std::endl;
     while (d > i)
     {
@@ -99,17 +98,18 @@ void    PhoneBook::search(int d)
     }
     std::cout << "enter index to display the contact: ";
     std::getline(std::cin, name);
-    for (int o = 0; o < name.length(); o++) {
-      if(!isdigit(name[o]))
-      {
-        i = -1;
-        break ;
-      }
-        i = std::stoi(name);
-   }
-    if (i >= d || i < 0)
+    for (size_t o = 0; o < name.length(); o++) {
+        if(!isdigit(name[o]))
+        {
+            i = -1;
+            break ;
+        }
+        i = atoi(name.c_str());
+
+    }
+    if (i < 0 || i >= d)
         std::cout << "error there is no contact with this index" << std::endl;
-    else
+    else if (d != 0)
     {
         std::cout << "First Name: " << Contacts[i].getfirst_name() << std::endl;
         std::cout << "Last Name: " << Contacts[i].getlast_name() << std::endl;
